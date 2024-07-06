@@ -124,7 +124,7 @@ def conversion():
             ran_to_cel()
         else:
             print("no")
-    
+
     #Conversion from other units to rankie
 
     elif unit_output.casefold() == 'r':   
@@ -149,10 +149,9 @@ def conversion():
         else:
             print("no")
 
+    else:
+        return 0
+    carry()
+
 #Calling conversion() function        
 conversion()  
-
-
-
-
-  #---------- done
