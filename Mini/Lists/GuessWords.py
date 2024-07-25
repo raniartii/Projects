@@ -1,54 +1,45 @@
 import random
+import time
+import sys
+def teminate_program():
+    print('----------------------------')
+    time.sleep(0.5)
+    print('----------------------------')
+    time.sleep(0.5)
+    print('Exiting')
+    time.sleep(0.5)
+    print('............................')
+    time.sleep(0.5)
+    print('............................')
+    time.sleep(0.5)
+    print('Program terminated')  
+    sys.exit(0)
 
-#Function to continue or end game
+hints = ['a programming language & a snake', 'king of veggies', 'king of fruits']
+words = ['python', 'aaloo', 'mango']
 
-def play_more():
-    ask = str(input('Do you want to play more? Yes/No : \n'))
-    if ask.casefold() == 'yes':
-        guess()
-    else:
-        from test import terminate_program
-        terminate_program()
+play_more = True
 
-#Hints & Answers
-
-hints = ['a programming language & a snake', 'king of veggies', 'king of fruits', 'mother\'s son-in-law\'s mother\'s grand daughter']
-words = ['python', 'aaloo', 'mango', 'neice']
-
-def welcome():
-    print("Welcome to the puzzle world")
-
-#Guess word & check function
+while play_more:
+    index = random.randint(0, len(hints) - 1)
+    guesses =  0
+    num = []
+    while True:
+        print(hints[index])
+        guess = input("Guess the word: ").strip().lower()
+        if guess == words[index]:
+            print("\nCorrect!")
+            response = input("Do you want to play more? (yes/no): \n").strip().lower()
+            if response == 'yes':
+                play_more = True
+            else:
+                from test import terminate_program
+                teminate_program()
+            break
+        else:
+            guesses = guesses+1
+            num.append(guess)
+            print('Words you guessed: ', num)
+            print(guesses, 'Incorrect guesses\n')
+            print("Incorrect. Try again!")
     
-def guess():
-    global guesses
-    play = True
-    while play:
-        index = random.randint(0, len(hints)-1)
-        guesses = 0
-
-        while True:
-            def check():
-                print(hints[index])
-                guess = str(input("\nGuess the word : ")).strip()
-                guess_list = []
-                guess_list.append(guess)
-                if guess.casefold() == words[index]:
-                    print("\nCorrect!\n")
-                    play_more() 
-                else:
-                    guesses = guesses+1
-                    print("\nIncorrect. Try again!\n")
-                    print('Number of incorrect guesses: ', guesses)
-                    print('\nWords you guessed: ', guess_list, '\n')
-                    check()
-            check()
-
-welcome()
-guess()
-# def execute():
-#     for i in hints:
-#         welcome()
-#         guess()
-
-# execute()

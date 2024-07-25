@@ -1,4 +1,4 @@
-n = int(input("Numbers: "))
+'''n = int(input("Numbers: "))
 num = list(map(float, input().split()))
 print(num)
 add = sum(num)
@@ -28,4 +28,4 @@ def division(a, b):
     div = dividend / divisor
     mod = dividend % divisor
     print(f'Quotient of {dividend} and {divisor} is: {div}')
-    print(f'Remainder of {dividend} and {divisor} is: {mod}')
+    print(f'Remainder of {dividend} and {divisor} is: {mod}')'''
