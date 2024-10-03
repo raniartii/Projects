@@ -33,7 +33,7 @@ while play_more:
             if response == 'yes':
                 play_more = True
             else:
-                from test import terminate_program
+                # from test import terminate_program
                 teminate_program()
             break
         else:
