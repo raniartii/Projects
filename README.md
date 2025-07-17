@@ -1,2 +1,2 @@
 # Projects
-Mini Projects in Python
+Practice/Trial Projects
